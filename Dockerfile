@@ -6,6 +6,8 @@ RUN Invoke-WebRequest 'https://download.microsoft.com/download/6/D/F/6DF3FF94-F7
 
 ADD app /app
 
+SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
+
 RUN pip install --upgrade pip
 RUN pip install -r /app/requirements.txt
 

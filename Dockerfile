@@ -8,7 +8,8 @@ ADD app /app
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'Continue';"]
 
-RUN pip install --upgrade pip
+# RUN pip install --upgrade pip
+RUN python -m pip install --upgrade pip
 RUN pip install -r /app/requirements.txt
 
 # Expose the port
